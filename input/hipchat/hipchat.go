@@ -5,9 +5,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/micro/cli"
-	"github.com/micro/go-bot/input"
-	"github.com/micro/hipchat"
+	"github.com/jinbanglin/cli"
+	"github.com/jinbanglin/go-bot/input"
+	"github.com/jinbanglin/hipchat"
 )
 
 type hipchatInput struct {

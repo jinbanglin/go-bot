@@ -2,7 +2,7 @@
 package input
 
 import (
-	"github.com/micro/cli"
+	"github.com/jinbanglin/cli"
 )
 
 type EventType string

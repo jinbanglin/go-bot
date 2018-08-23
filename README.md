@@ -1,4 +1,4 @@
-# Go Bot [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![GoDoc](https://godoc.org/github.com/micro/go-bot?status.svg)](https://godoc.org/github.com/micro/go-bot) [![Travis CI](https://api.travis-ci.org/micro/go-bot.svg?branch=master)](https://travis-ci.org/micro/go-bot) [![Go Report Card](https://goreportcard.com/badge/micro/go-bot)](https://goreportcard.com/report/github.com/micro/go-bot)
+# Go Bot [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![GoDoc](https://godoc.org/github.com/jinbanglin/go-bot?status.svg)](https://godoc.org/github.com/jinbanglin/go-bot) [![Travis CI](https://api.travis-ci.org/micro/go-bot.svg?branch=master)](https://travis-ci.org/micro/go-bot) [![Go Report Card](https://goreportcard.com/badge/micro/go-bot)](https://goreportcard.com/report/github.com/jinbanglin/go-bot)
 
 Go Bot is a library used to create commands, inputs and bot services for Micro
 
@@ -9,7 +9,7 @@ Commands are functions executed by the bot based on text based pattern matching.
 ### Write a Command
 
 ```go
-import "github.com/micro/go-bot/command"
+import "github.com/jinbanglin/go-bot/command"
 
 func Ping() command.Command {
 	usage := "ping"
@@ -26,7 +26,7 @@ func Ping() command.Command {
 Add the command to the Commands map with a pattern key that can be matched by golang/regexp.Match
 
 ```go
-import "github.com/micro/go-bot/command"
+import "github.com/jinbanglin/go-bot/command"
 
 func init() {
 	command.Commands["^ping$"] = Ping()
@@ -37,7 +37,7 @@ func init() {
 
 Build binary
 ```shell
-cd github.com/micro/micro
+cd github.com/jinbanglin/micro
 
 // For local use
 go build -i -o micro ./main.go
@@ -78,7 +78,7 @@ type Input interface {
 Add the input to the Inputs map.
 
 ```go
-import "github.com/micro/micro/bot/input"
+import "github.com/jinbanglin/micro/bot/input"
 
 func init() {
 	input.Inputs["name"] = MyInput
@@ -89,7 +89,7 @@ func init() {
 
 Build binary
 ```shell
-cd github.com/micro/micro
+cd github.com/jinbanglin/micro
 
 // For local use
 go build -i -o micro ./main.go
@@ -110,7 +110,7 @@ is executed, the bot will call the service with method `Command.Exec`. It also e
 to exist for usage info.
 
 
-The service interface is as follows and can be found at [go-bot/proto](https://github.com/micro/go-bot/blob/master/proto/bot.proto)
+The service interface is as follows and can be found at [go-bot/proto](https://github.com/jinbanglin/go-bot/blob/master/proto/bot.proto)
 
 ```
 syntax = "proto3";
@@ -151,10 +151,10 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/micro/go-micro"
+	"github.com/jinbanglin/go-micro"
 	"golang.org/x/net/context"
 
-	proto "github.com/micro/go-bot/proto"
+	proto "github.com/jinbanglin/go-bot/proto"
 )
 
 type Command struct{}
